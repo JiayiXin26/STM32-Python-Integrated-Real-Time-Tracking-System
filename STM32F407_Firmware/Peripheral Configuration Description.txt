@@ -1,0 +1,17 @@
+﻿1 Use Timer 3 to generate a 51 ms timing cycle, polling to trigger ultrasonic measurements (set one I/O pin high for 20 µs).
+
+2 Use four capture units to capture TIM2 (PA0 ~ PA3) and TIM5 (PA0 ~ PA3).
+Use PD0, PD1, PD2, PD3 as the trigger I/O pins.
+Sensor 1 : PF13 trigger , PA0 capture , TIM5 CH1 channel
+Sensor 2 : PF14 trigger , PA1 capture , TIM5 CH2 channel
+Sensor 3 : PD2 trigger , PA2 capture , TIM5 CH3 channel
+Sensor 4 : PD3 trigger , PA3 capture , TIM5 CH4 channel
+Position arrangement (front view):
+Sensor 1   Sensor 2
+
+Sensor 4   Sensor 3
+
+3 Control the motors using two PWMs (TIM13 and TIM14) corresponding to I/O pins GPIO F8 (TIM13) and GPIO F9 (TIM14).
+Motor control uses a 20 ms PWM period with pulse width from 500 µs to 2500 µs, corresponding to angles 0–270 degrees. The center position corresponds to a 1.5 ms pulse width.
+
+4 UART communication: GPIO A9 (TX) GPIO A10 (RX)
